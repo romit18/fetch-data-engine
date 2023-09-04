@@ -5,6 +5,15 @@ You would need Java 17 on your system for running the application.
 
 Micronaut JMS is something to which this application can be extended shortening the code a lot if an actual AWS account can be used. 
 
+Using JMS(Java Messaging Service) came from the fact that there is a huge support by Amazon for AWS using Micronaut as a service. 
+Micronaut provides us with the flexibility of easy connection of dbs configured in the application.properties.
+
+To make this deployable to production, an image for the same could be deployed as lightweight as possible which JMS makes possible making it production ready. 
+
+A lot of improvements can be made if instead of localstack, an actual account could be used. 
+
+We could configure different environments using ArgoCD and deploy these artifacts to production by having multi-load balancers using something like Ingress and Traefik.
+
 I have used base64 encoding/decoding for masking. 
 ## Micronaut 4.1.0 Documentation
 
