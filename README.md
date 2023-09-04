@@ -1,3 +1,11 @@
+
+This application has been built as a microservice which when triggered/started will run every 10s to read messages from the SQS queue and store it in the DB. 
+
+You would need Java 17 on your system for running the application.
+
+Micronaut JMS is something to which this application can be extended shortening the code a lot if an actual AWS account can be used. 
+
+I have used base64 encoding/decoding for masking. 
 ## Micronaut 4.1.0 Documentation
 
 - [User Guide](https://docs.micronaut.io/4.1.0/guide/index.html)
