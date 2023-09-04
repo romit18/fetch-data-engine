@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.fetch
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [ app-name, gradle, http-client-test, java, java-application, jms-core, jms-sqs, junit, logback, micronaut-aot, micronaut-build, netty-server, properties, readme, serialization-jackson, shade ]

@@ -1,0 +1,61 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("io.micronaut.application") version "4.0.3"
+    id("io.micronaut.library") version "3.3.0"
+}
+
+version = "0.1"
+group = "com.fetch"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.26'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    compileOnly group: 'jakarta.transaction', name: 'jakarta.transaction-api', version: '2.0.0'
+    annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+    implementation("io.micronaut.jms:micronaut-jms-core")
+    implementation("io.micronaut.jms:micronaut-jms-sqs")
+    implementation("io.micronaut:micronaut-inject-java:4.1.3")
+    implementation("io.micronaut.serde:micronaut-serde-jackson")
+    implementation 'com.amazonaws:aws-java-sdk-sqs'
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
+    implementation("io.micronaut.data:micronaut-data-jdbc")
+    implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
+    annotationProcessor("org.projectlombok:lombok")
+    annotationProcessor("io.micronaut.data:micronaut-data-processor:2.2.1")
+    implementation("io.micronaut.data:micronaut-data-jdbc")
+    runtimeOnly("org.postgresql:postgresql")
+
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    testImplementation("io.micronaut:micronaut-http-client")
+
+
+}
+
+
+application {
+    mainClass.set("com.fetch.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.fetch.*")
+    }
+}
+
+
+
