@@ -3,6 +3,12 @@ This application has been built as a microservice which when triggered/started w
 
 You would need Java 17 on your system for running the application.
 
+To install Java on Linux/Mac: sdk install java 17.0.7-graal
+
+The application is gradle based. To compile the application: ./gradlew nativeCompile
+
+To run the application, use: ./gradlew run
+
 Micronaut JMS is something to which this application can be extended shortening the code a lot if an actual AWS account can be used. 
 
 Using JMS(Java Messaging Service) came from the fact that there is a huge support by Amazon for AWS using Micronaut as a service. 
