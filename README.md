@@ -14,6 +14,8 @@ A lot of improvements can be made if instead of localstack, an actual account co
 
 We could configure different environments using ArgoCD and deploy these artifacts to production by having multi-load balancers using something like Ingress and Traefik.
 
+We can even produce executables easily using graalVM if we do not want to run the service again and again.
+
 I have used base64 encoding/decoding for masking. 
 ## Micronaut 4.1.0 Documentation
 
